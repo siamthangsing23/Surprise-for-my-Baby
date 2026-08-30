@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Zingkaal Pha Baby ❤️</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: "Poppins", Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 25px;
+            overflow-x: hidden;
+
+            background:
+                linear-gradient(135deg, #ffecd2, #fcb69f, #ff9a9e);
+
+            color: white;
+        }
+
+        /* Main card */
+        .card {
+            width: 100%;
+            max-width: 650px;
+            padding: 40px 25px;
+            text-align: center;
+
+            background: rgba(255, 255, 255, 0.20);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            border-radius: 30px;
+
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
+
+            animation: appear 1.3s ease;
+            z-index: 5;
+        }
+
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: translateY(40px) scale(0.9);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* Heart */
+        .heart {
+            font-size: 55px;
+            animation: heartbeat 1.4s infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        h1 {
+            font-size: clamp(2rem, 8vw, 3.8rem);
+            margin-top: 10px;
+            text-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .sunday {
+            font-size: clamp(1.3rem, 5vw, 1.8rem);
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .intro {
+            margin: 25px auto;
+            max-width: 520px;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        /* Photo */
+        .photo-container {
+            margin: 25px auto;
+            width: 210px;
+            height: 210px;
+            border-radius: 50%;
+            padding: 6px;
+
+            background: rgba(255,255,255,0.8);
+
+            box-shadow:
+                0 10px 30px rgba(0,0,0,0.2);
+
+            animation: photoFloat 3s ease-in-out infinite;
+        }
+
+        .photo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        @keyframes photoFloat {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+        /* Motivation */
+        .motivation {
+            margin: 25px auto;
+            line-height: 2;
+            font-size: 1.05rem;
+        }
+
+        .motivation p {
+            margin: 7px 0;
+        }
+
+        /* Button */
+        button {
+            margin-top: 15px;
+            padding: 16px 32px;
+
+            border: none;
+            border-radius: 50px;
+
+            background: white;
+            color: #e75480;
+
+            font-size: 1.05rem;
+            font-weight: bold;
+
+            cursor: pointer;
+
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.08);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+        }
+
+        /* Hidden message */
+        #secretMessage {
+            display: none;
+            margin-top: 25px;
+            padding: 20px;
+
+            border-radius: 20px;
+
+            background: rgba(255,255,255,0.18);
+
+            font-size: 1.1rem;
+            line-height: 1.8;
+
+            animation: messageAppear 0.8s ease;
+        }
+
+        @keyframes messageAppear {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .ending {
+            margin-top: 25px;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        /* Floating hearts */
+        .floating-heart {
+            position: fixed;
+            bottom: -50px;
+            pointer-events: none;
+            animation: floatUp linear infinite;
+            opacity: 0.7;
+            z-index: 1;
+        }
+
+        @keyframes floatUp {
+            from {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 0.8;
+            }
+
+            to {
+                transform: translateY(-110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 500px) {
+
+            .card {
+                padding: 35px 18px;
+            }
+
+            .photo-container {
+                width: 175px;
+                height: 175px;
+            }
+
+            .intro,
+            .motivation {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Floating hearts -->
+    <div class="floating-heart" style="left:5%; animation-duration:8s;">❤️</div>
+    <div class="floating-heart" style="left:20%; animation-duration:10s;">💗</div>
+    <div class="floating-heart" style="left:40%; animation-duration:12s;">💕</div>
+    <div class="floating-heart" style="left:60%; animation-duration:9s;">💖</div>
+    <div class="floating-heart" style="left:80%; animation-duration:11s;">💗</div>
+    <div class="floating-heart" style="left:95%; animation-duration:8s;">❤️</div>
+
+
+    <div class="card">
+
+        <div class="heart">❤️</div>
+
+        <h1>Zingkaal Pha Baby</h1>
+
+        <div class="sunday">
+            Have a Blessed Sunday! 🌸☀️
+        </div>
+
+
+        <div class="photo-container">
+            <img src="baby.jpg" alt="A beautiful memory ❤️">
+        </div>
+
+
+        <div class="intro">
+            Good morning, Baby! ❤️<br><br>
+
+            May this beautiful Sunday bring you
+            peace, happiness, strength, and countless
+            reasons to smile.
+        </div>
+
+
+        <div class="motivation">
+
+            <p>✨ Believe in yourself.</p>
+
+            <p>🌱 Keep moving forward, one step at a time.</p>
+
+            <p>💪 Don't let difficult moments stop you.</p>
+
+            <p>🌟 Your efforts today will create a better tomorrow.</p>
+
+            <p>🙏 May God bless you and guide you throughout the week.</p>
+
+        </div>
+
+
+        <button onclick="showMessage()">
+            💗 TOUCH ME BABY 💗
+        </button>
+
+
+        <div id="secretMessage">
+
+            You are more special than you know. ❤️<br><br>
+
+            Whatever this week brings,
+            remember that you are strong,
+            capable, and worthy of beautiful things.
+
+            <br><br>
+
+            Keep smiling, keep believing,
+            and never give up on yourself. 🌸
+
+            <br><br>
+
+            <strong>Have a blessed and beautiful Sunday, Baby! ❤️🙏</strong>
+
+        </div>
+
+
+        <div class="ending">
+            With lots of love ❤️<br>
+            Have a wonderful Sunday! 🌷
+        </div>
+
+    </div>
+
+
+    <script>
+
+        function showMessage() {
+
+            const message =
+                document.getElementById("secretMessage");
+
+            if (message.style.display === "block") {
+
+                message.style.display = "none";
+
+            } else {
+
+                message.style.display = "block";
+
+            }
+        }
+
+
+        /* Create floating hearts */
+
+        function createHeart() {
+
+            const heart =
+                document.createElement("div");
+
+            heart.classList.add("floating-heart");
+
+            const hearts = [
+                "❤️",
+                "💗",
+                "💕",
+                "💖",
+                "💓"
+            ];
+
+            heart.innerHTML =
+                hearts[Math.floor(Math.random() * hearts.length)];
+
+            heart.style.left =
+                Math.random() * 100 + "%";
+
+            heart.style.fontSize =
+                (15 + Math.random() * 25) + "px";
+
+            heart.style.animationDuration =
+                (7 + Math.random() * 7) + "s";
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 15000);
+        }
+
+
+        setInterval(createHeart, 1200);
+
+    </script>
+
+</body>
+</html>
